@@ -25,17 +25,9 @@ async function connectDB() {
   let mongoUri = process.env.MONGODB_URI;
 
   if (!mongoUri) {
-    console.log('No MONGODB_URI detected in env. Bootstrapping mongodb-memory-server...');
-    try {
-      const { MongoMemoryServer } = require('mongodb-memory-server');
-      const mongoServer = await MongoMemoryServer.create();
-      mongoUri = mongoServer.getUri();
-      console.log(`In-memory MongoDB server created: ${mongoUri}`);
-    } catch (err) {
-      console.error('Failed to bootstrap in-memory MongoDB server:', err);
-      process.exit(1);
-    }
-  }
+  console.error('MONGODB_URI is missing');
+  process.exit(1);
+}
 
   try {
     await mongoose.connect(mongoUri);

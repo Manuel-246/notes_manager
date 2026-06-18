@@ -3,7 +3,7 @@ import NoteCard from './components/NoteCard';
 import NoteForm from './components/NoteForm';
 import NoteModal from './components/NoteModal';
 
-const API_BASE = 'http://localhost:5000/api/notes';
+const API_BASE = 'notes-manager-git-main-manuel-246s-projects.vercel.app';
 
 export default function App() {
   const [notes, setNotes] = useState([]);

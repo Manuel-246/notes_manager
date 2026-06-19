@@ -151,3 +151,6 @@ This project is developed for educational and learning purposes.
 ## 👨‍💻 Author
 
 Developed by Manuel-246
+
+Run using this link.  
+https://notes-manager-snowy.vercel.app

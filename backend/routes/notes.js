@@ -4,7 +4,13 @@ const db = require('../database');
 router.get('/', (req, res) => {
   db.all('SELECT * FROM notes ORDER BY updatedAt DESC', [], (err, rows) => {
     if (err) return res.status(500).json(err);
-    res.json(rows);
+
+    const notes = rows.map(note => ({
+      ...note,
+      tags: note.tags ? JSON.parse(note.tags) : []
+    }));
+
+    res.json(notes);
   });
 });
 

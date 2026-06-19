@@ -19,6 +19,4 @@ app.get('/', (req, res) => {
   res.json({ message: 'Notes Management System API is active' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend API Server running on port ${PORT}`);
-});
+module.exports = app;

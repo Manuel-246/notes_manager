@@ -107,8 +107,8 @@ export default function App() {
   const handleEditNote = async (noteData) => {
     if (!selectedNote) return;
     try {
-      const response = await fetch(`${API_BASE}/${selectedNote._id}`, {
-        method: 'PUT',
+const response = await fetch(`${API_BASE}/${selectedNote.id}`, {      
+  method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(noteData),
       });
@@ -129,8 +129,8 @@ export default function App() {
   const handleDeleteNote = async () => {
     if (!selectedNote) return;
     try {
-      const response = await fetch(`${API_BASE}/${selectedNote._id}`, {
-        method: 'DELETE',
+const response = await fetch(`${API_BASE}/${selectedNote.id}`, {
+  method: 'DELETE',
       });
 
       if (!response.ok) throw new Error('Failed to delete note');
@@ -251,7 +251,7 @@ export default function App() {
           <div className="notes-grid">
             {notes.map((note) => (
               <NoteCard
-                key={note._id}
+                key={note.id}
                 note={note}
                 onClick={() => {
                   setSelectedNote(note);

@@ -3,8 +3,7 @@ import NoteCard from './components/NoteCard';
 import NoteForm from './components/NoteForm';
 import NoteModal from './components/NoteModal';
 
-const API_BASE = '/api/notes';
-export default function App() {
+const API_BASE = 'https://notes-manager-5axt.onrender.com/api/notes';export default function App() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
